@@ -24,6 +24,14 @@ OPTIONS:
                           The repo or file url of the template podspec.
   -h, --help              Show help information.
 ```
+### Workflow to create Cocoapods from SPM package
+
+1. Create and write SPM package
+2. Push the package to remote repo and release it by assign a tag.
+3. In the root of the package(which should contains a Package.Swift file), execute pcakge-to-pods to create ${Package Name}.podspec
+4. Open the ${Package Name}.podspec, check and update `s.summary`, `s.description`, `s.homepage`, and `s.license` if necessary.
+5. Execute `pod lib lint` to check if there is any error need to be fixed. (normally, it might need update the dependency name to related pod)
+6. If every thing is ok, run `pod trunk register ${user_email}` and `pod trunk push` to publish your pods.
 
 ## Installation
 To install Package2Pods
