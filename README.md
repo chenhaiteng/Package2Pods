@@ -48,6 +48,8 @@ Yout can refer the default template [here](https://github.com/chenhaiteng/swift-
 ## License
 Package2Pods is available under the MIT license. See the LICENSE file for more info.
 
+---
 If you think this tools is good, buy me a coffee would be helpful.
+
 
 <a href="https://www.buymeacoffee.com/chenhaiteng"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=chenhaiteng&button_colour=FFDD00&font_colour=000000&font_family=Bree&outline_colour=000000&coffee_colour=ffffff" /></a>
