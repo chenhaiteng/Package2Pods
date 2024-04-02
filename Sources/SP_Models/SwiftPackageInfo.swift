@@ -29,6 +29,11 @@ struct SwiftPackageInfo: Decodable, CustomDebugStringConvertible {
             case name = "platformName"
             case version
         }
+        
+        static let `default` = [
+            Platform(name: "macos", version: "10.13"),
+            Platform(name: "ios", version: "12.0")
+        ]
     }
 
     let name: String
@@ -49,12 +54,13 @@ struct SwiftPackageInfo: Decodable, CustomDebugStringConvertible {
         "[swift package: \(name)] swift version: \(toolsVersion)\n\(platforms)\n\(dependencies)"
     }
 }
-
+ 
 // Convert to podspec
 extension SwiftPackageInfo {
     var podPlatforms: String {
         var result: String = ""
-        for platform in platforms where supportedPlatform.keys.contains(platform.name) {
+        let platformList = platforms.isEmpty ? Platform.default : platforms
+        for platform in platformList where supportedPlatform.keys.contains(platform.name) {
             if let name = supportedPlatform[platform.name], !name.isEmpty {
                 result.append("\n")
                 result.append("  s.platform = :\(name), '\(platform.version)'\n")
