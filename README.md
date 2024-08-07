@@ -1,5 +1,5 @@
 # Package2Pods
-Package2Pods is a samll tool to create .podspec from SPM Package
+Package2Pods is a small tool to create .podspec from SPM Package
 
 ![GitHub License](https://img.shields.io/github/license/chenhaiteng/Package2Pods)
 
@@ -9,7 +9,7 @@ Currently, to convert SPM package to Cocoapods, it needs following steps:
 2. To make the library work, it need update some git/spm information into the {Library}.podspec manually. 
 3. It need to add dependency manually.
 
-To reduce those efforts, Pcakage2Pods read some information from the SPM package and its git repo. and convert and append those information to given template podspec.
+To reduce those efforts, Package2Pods read some information from the SPM package and its git repo. and convert and append those information to given template podspec.
 currently, it collects and updates following information into podspec:
 1. Package Name, Platforms, Swift Tool Version and dependencies from Swift Package.
 2. User name, email, repo url (with the scheme "https"), and the latest tag from git.
@@ -28,7 +28,7 @@ OPTIONS:
 
 1. Create and write SPM package
 2. Push the package to remote repo and release it by assign a tag.
-3. In the root of the package(which should contains a Package.Swift file), execute pcakge-to-pods to create ${Package Name}.podspec
+3. In the root of the package(which should contains a Package.Swift file), execute packge-to-pods to create ${Package Name}.podspec
 4. Open the ${Package Name}.podspec, check and update `s.summary`, `s.description`, `s.homepage`, and `s.license` if necessary.
 5. Execute `pod lib lint` to check if there is any error need to be fixed. (normally, it might need update the dependency name to related pod)
 6. If every thing is ok, run `pod trunk register ${user_email}` and `pod trunk push` to publish your pods.
@@ -36,14 +36,14 @@ OPTIONS:
 ## Installation
 To install Package2Pods
 1. clone the repo to local.
-2. open terminal and chanage diretory to local repo.
+2. open terminal and change diretory to local repo.
 3. run `./buildAndInstall.sh`
 
 It will build and copy the release version into `/usr/local/bin`
 
 ## Advance Topics:
 Package2Pods also allow you to create template podspec.
-Yout can refer the default template [here](https://github.com/chenhaiteng/swift-package-to-cocoapods-template) to write customized one.
+You can refer the default template [here](https://github.com/chenhaiteng/swift-package-to-cocoapods-template) to write customized one.
 
 ## License
 Package2Pods is available under the MIT license. See the LICENSE file for more info.
